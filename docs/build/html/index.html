@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to ECE229 New York Airbnb Recommendation’s documentation! &mdash; ECE229 New York Airbnb Recommendation 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> ECE229 New York Airbnb Recommendation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to ECE229 New York Airbnb Recommendation’s documentation!</a><ul>
+<li><a class="reference internal" href="#package-dependencies">Package Dependencies</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-viz_FilterbyText.pipeline_new">Data Visualization</a></li>
+<li><a class="reference internal" href="#module-application">Result Prediction</a></li>
+<li><a class="reference internal" href="#test">Test</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">ECE229 New York Airbnb Recommendation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Welcome to ECE229 New York Airbnb Recommendation’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-ece229-new-york-airbnb-recommendation-s-documentation">
+<h1>Welcome to ECE229 New York Airbnb Recommendation’s documentation!<a class="headerlink" href="#welcome-to-ece229-new-york-airbnb-recommendation-s-documentation" title="Permalink to this heading">¶</a></h1>
+<p>This project is a <strong>New York House Price Recommendation and Prediction System</strong>.</p>
+<p>The main purpose is to help travelers, long-term tenants, and landlords understand the housing rental trend in NYC and locate their desired offers, either to stay for a few nights or to optimize the pricing strategy for their own properties.</p>
+<section id="package-dependencies">
+<h2>Package Dependencies<a class="headerlink" href="#package-dependencies" title="Permalink to this heading">¶</a></h2>
+<p>The project depends on flask, numpy, pandas, scikit-learn and bokeh, etc. The packge version is listed below:</p>
+<p><strong>For Data Analysis:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span><span class="n">bokeh</span>                         <span class="mf">2.4.3</span>
+<span class="o">-&gt;</span><span class="n">numpy</span>                         <span class="mf">1.22.4</span>
+<span class="o">-&gt;</span><span class="n">pandas</span>                        <span class="mf">1.4.2</span>
+</pre></div>
+</div>
+<p><strong>For Prediction:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>                  <span class="mf">1.1.1</span>
+<span class="o">-&gt;</span><span class="n">pandas</span>                        <span class="mf">1.4.2</span>
+<span class="o">-&gt;</span><span class="n">numpy</span>                         <span class="mf">1.22.4</span>
+</pre></div>
+</div>
+<p><strong>For Test:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span><span class="n">coverage</span>                      <span class="mf">5.1</span>
+<span class="o">-&gt;</span><span class="n">pytest</span>                        <span class="mf">5.0.1</span>
+<span class="o">-&gt;</span><span class="n">numpy</span>                         <span class="mf">1.22.4</span>
+<span class="o">-&gt;</span><span class="n">pandas</span>                        <span class="mf">1.4.2</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="module-viz_FilterbyText.pipeline_new">
+<span id="data-visualization"></span><h1>Data Visualization<a class="headerlink" href="#module-viz_FilterbyText.pipeline_new" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="viz_FilterbyText.pipeline_new.donut">
+<span class="sig-prename descclassname"><span class="pre">viz_FilterbyText.pipeline_new.</span></span><span class="sig-name descname"><span class="pre">donut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#viz_FilterbyText.pipeline_new.donut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the donut chart to visualize the percentage of room types in the selected regions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dataset</strong> (<em>pandas DataFrame</em>) – dataset to visualize</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a donut chart visualizing the percentage of room types</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>rendered image</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="viz_FilterbyText.pipeline_new.visualize_count">
+<span class="sig-prename descclassname"><span class="pre">viz_FilterbyText.pipeline_new.</span></span><span class="sig-name descname"><span class="pre">visualize_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filtered_dataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#viz_FilterbyText.pipeline_new.visualize_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visualize the count of listings based on the user inputs, using hexbin map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filtered_dataset</strong> (<em>pandas DataFrame</em>) – filtered dataset for mapping</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a rendered bokeh hexbin map based on inputs</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bokeh map objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="viz_FilterbyText.pipeline_new.visualize_price">
+<span class="sig-prename descclassname"><span class="pre">viz_FilterbyText.pipeline_new.</span></span><span class="sig-name descname"><span class="pre">visualize_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filtered_dataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#viz_FilterbyText.pipeline_new.visualize_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Visualize the average price of listings based on the user inputs, using hexbin map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filtered_dataset</strong> (<em>pandas DataFrame</em>) – filtered dataset for mapping</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a rendered bokeh hexbin map based on inputs</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bokeh map objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-application">
+<span id="result-prediction"></span><h1>Result Prediction<a class="headerlink" href="#module-application" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="application.actual_app">
+<span class="sig-prename descclassname"><span class="pre">application.</span></span><span class="sig-name descname"><span class="pre">actual_app</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#application.actual_app" title="Permalink to this definition">¶</a></dt>
+<dd><p>The actual application to generate analysis and render the pages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rendered webpages</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>rendered html</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="application.get_ng_dict">
+<span class="sig-prename descclassname"><span class="pre">application.</span></span><span class="sig-name descname"><span class="pre">get_ng_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#application.get_ng_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the dictionary of neighbourhoods based on the input regions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>Pandas DataFrame</em>) – DataFrame to select from.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the dictionary of neighbourhoods in the selected regions.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="application.get_pd_df">
+<span class="sig-prename descclassname"><span class="pre">application.</span></span><span class="sig-name descname"><span class="pre">get_pd_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#application.get_pd_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the CSV files into a Pandas DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – path of the csv files.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Pandas DataFrame of the inputed files.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="application.home_endpoint">
+<span class="sig-prename descclassname"><span class="pre">application.</span></span><span class="sig-name descname"><span class="pre">home_endpoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#application.home_endpoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Route for the flask backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>rendered index.html</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>rendered webpages</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="application.load_model">
+<span class="sig-prename descclassname"><span class="pre">application.</span></span><span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#application.load_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the Decision Tree Regressor model we trained.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="application.parse_price_range">
+<span class="sig-prename descclassname"><span class="pre">application.</span></span><span class="sig-name descname"><span class="pre">parse_price_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">priceRangeStr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#application.parse_price_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the user inputed strings to get price range</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>priceRangeStr</strong> (<em>string</em>) – Range of Price</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of price range</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="application.plot_bokeh_map_new">
+<span class="sig-prename descclassname"><span class="pre">application.</span></span><span class="sig-name descname"><span class="pre">plot_bokeh_map_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_new</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#application.plot_bokeh_map_new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the map of offerings (points) using the updated visulization and NLP processed dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df_new</strong> (<em>Pandas DataFrame</em>) – NLP processed dataframe to plots</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>an interactive bokeh map of circles of offerings</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bokeh map ojects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="application.select">
+<span class="sig-prename descclassname"><span class="pre">application.</span></span><span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_selected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranges</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#application.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects data according to the parsed attributes and ranges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df_selected</strong> (<em>Pandas DataFrame</em>) – DataFrame to select from</p></li>
+<li><p><strong>attributes</strong> (<em>list</em>) – list of attributes to select</p></li>
+<li><p><strong>ranges</strong> (<em>list</em>) – list of ranges of attributes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selected DataFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="application.select_from_request">
+<span class="sig-prename descclassname"><span class="pre">application.</span></span><span class="sig-name descname"><span class="pre">select_from_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_selected</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notfound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#application.select_from_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects data according to the html request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df_selected</strong> (<em>pandas DataFrame</em>) – DataFrame to select</p></li>
+<li><p><strong>request_form</strong> (<em>iterable</em>) – the HTML request</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selected DataFrame</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="test">
+<h1>Test<a class="headerlink" href="#test" title="Permalink to this heading">¶</a></h1>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ziyan Cui, Chang Liu, Zhexu Li, Kexin Quan, Sarthak Raheja.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

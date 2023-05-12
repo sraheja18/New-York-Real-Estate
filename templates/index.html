@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Your Dream Rental Houses</title>
+
+	<meta name="description" content="Source code generated using layoutit.com">
+	<meta name="author" content="LayoutIt!">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<!-- <link rel="stylesheet" href={{cdn_css}} type="text/css"> -->
+	<script type="text/javascript" src={{cdn_js}} crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
+
+</head>
+
+<body>
+	<script>
+		window.onload = function jump(){
+			var top = document.getElementById('{{anchor}}').offsetTop; //Getting Y of target element
+			window.scrollTo(0, top);                        //Go there.
+		}
+	</script>
+
+	<div class="top-container" id="top">
+      <div class="title-text">
+        <h1>New York Airbnb</h1>
+        <h2>find your dream house</h2>
+      </div>
+</div><div class="middle-container">
+		<div class="Question-to-investigate">
+			<br>
+        	<details open><summary style = "color: #66aabf; font-family: 'Montserrat', sans-serif; padding-top: 50px; font-weight: bolder; font-size: 2em">Motivation       </summary>
+        	<p class="intro">
+				The housing rental market in New York City is gradually recovering after a rough time during the pandemic. 
+				The economy in NYC also revives with the reopening of restaurants, the growth of tourism, and the rapid rising of housing rentals. 
+
+				It is crucial for travelers, long-term tenants, and landlords to understand the housing rental trend in NYC and locate their desired offers, either to stay for a few nights or to optimize the pricing strategy for their own properties. 
+
+				In this website, we provide local hosts and prospective travellers with an interactive and easy to use system that helps them to better understand the rental housing market in New York City. <br>This system is deployed on AWS servers and it includes sophisticated modules for data pipeline, analytical models, results, visualization, and interactive on-the-fly analysis.
+			</p></details>
+      	</div><div class="User-Story">
+        	<details><summary style = "color: #66aabf; font-family: 'Montserrat', sans-serif; padding-top: 50px; font-weight: bolder; font-size: 2em">User Story</summary>
+        	<p class="intro">
+				As a travel/renter who wants to get the best housing offerings in the NYC Airbnb rental market, I would like to receive an overview of the rental market in the region I interested in,  
+				so I can make informed purchase decisions. To be more specific, I expect the system to 
+				provide available offerings filtered by my inputs (locations, price range, etc), and automatically generate analysis and visualizations that are easy to understand. 
+			</p>
+			<p class="intro">
+				As a homeowner in NYC who wants to lease my properties on Airbnb, I also want an overview of the rental market in my region so I can decide a competitive pricing strategy for my offering. Moreover, I would like to know the number of 
+				offerings that are similar to my property, and the average price of those offerings. I would like those information to be visualized on a map so it's easier to digest. And if there is no similar offering exist, I would like to have a price recommended for my property based on the market, so it can serve as a baseline 
+				for my pricing strategy. 
+			</p></details>
+		</div>
+
+
+    
+	</div><div class = "middle-container">
+		<div class="Question-to-investigate">
+			<details open><summary style = "color: #66aabf; font-family: 'Montserrat', sans-serif; padding-top: 50px; font-weight: bolder; font-size: 2em">How to Use</summary>
+        	<p class="intro">
+				Our "Your Dream House Finder" application is capable of automatically generate analysis and interactive visualizations that are easy for normal users to understand 
+				based on user inputs. To use the application, please input all three required selections: <b>Room Type, Region, and Neighborhood, </b>otherwise no analysis will be generated. 
+				The other inputs, price range and minimum nights rented, are optional. Once the desired features are inputted, please click the "Search" botton, the analysis and visualizations will be generated after a brief loading time. 
+			</p></details>
+			<details><summary style = "color: #66aabf; font-family: 'Montserrat', sans-serif; padding-top: 50px; font-weight: bolder; font-size: 2em">How it Works</summary>
+			<p class="intro">
+				Once the user inputs their desired features, click the "Search" botton, then the analysis and visualizations will be generated after a brief loading time. 
+				All the available offerings filtered by the inputs, along with some analysis, will be listed in the searching / prediction result tab.  The analysis includes the <b>average and median price </b>of listings selected by user inputs, the <b>number of such listings </b>, and if there is not enough 
+				listings found given users inputs, it will return a <b>recommended price </b>which is learned from the rental market trend in NYC. The "Map of Houses" tab includes an <b>interactive map</b> of 
+				available listings in the region, with every circle represents a single listing, and with important text features (luxury, highrise, et cetera.) generated by <b>NLP</b> displayed in the tooltips. The 
+				"Data Visualization" tab includes three more visualizations of the data: <b>count of listings by location, average price of listings by location, and percentage of room types</b>. 
+			</p></details>
+			<details><summary style = "color: #66aabf; font-family: 'Montserrat', sans-serif; padding-top: 50px; font-weight: bolder; font-size: 2em">Technical Details</summary>
+			<p class="intro">
+				When first loaded, the application by default initializes an analysis of all listings we have in the NYC. The map of houses will display top 500 cheapest offerings because it's unrealistic and unnecessary to 
+				include all 50000 listings on the map. 
+				After the user send their request form, the application will filter the dataset (preprossed by NLP) in the backend based on their inputs, if the number of search 
+				results &gt 500, it will return the analysis mentioned above without making any recommendations because the data is sufficient, and displaying the top 20 cheapest listings. If the number of results &lt 20 but &gt 0, it will still 
+				generate all the visualizations, but the lack of data suggests those listings may not be sufficient to represent the rental market in that region, so a recommended price will be returned by our pretrained model. If no data was found 
+				based on the inputs, it will return a recommended price predicted by our model, but no visualization or analysis will be generated because there is nothing to analyze. 
+			</p>
+			<p class="intro">
+				To help our users better understanding the NYC rental market, we utilized some <b>NLP</b> packages (NLTK) to <b>extract keywords</b> (luxury, highrise, et cetera.) from the titles of the listings, and embeded those extracted keywords into our 
+				dataset to save computational resources. The model we trained was a <b>Decision Tree Regressor</b>, using only the most important features selected from our full dataset analysis. The model achieved a mean absolute error (MAE) of <b>57</b>, to put it 
+				into context, the average price of all listings in our dataset is 153, so we believe the performace is acceptable. All interactive maps were generated using <b>bokeh</b>, and we spent a lot of time customizing the plots to make them looks better. 
+
+				Hexbin maps overlay were selected for visualizing regional counts and prices over the choropleth map, because there is no bounding box (polygon) information that has the high resolution our dataset requires. We aggregate and visualize data points within blocks, and 
+				we were unable to find any bounding box data in that high resolution, the best we found can only aggregate neighbourhoods within regions, which is not ideal for our tasks. The donut chart is generated using pyplotlib, there is no interaction available for 
+				the donut chart, but it already has all the information displayed, and it looks pretty beautiful. 
+			</p>
+			<p class="intro">
+				The whole backend of our website was written using flask, the website frontend was written using a combination of html, css, and javascipt. The website is consisted of two parts: one static website displaying these 
+				static information, and one application was embeded into an iframe. In this way, every time the user click search, it won't refresh the entire website, only the application part which is at the end of the website. 
+			</p></details>
+
+			<details><summary style = "color: #66aabf; font-family: 'Montserrat', sans-serif; padding-top: 50px; font-weight: bolder; font-size: 2em">Analysis of the Entire Dataset</summary>
+
+				<p class="intro">
+					The<a href = "https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data">dataset</a>we used is an Airbnb dataset collected in NYC in late 2019, just before the pandemic, so we believe it should be a good representation of the Airbnb rental market in NYC after the recovering of tourism. The dataset, after being cleaned
+					and preprocessed by NLP, contains 48349 records, with an average price of 153 per day. Visualizations of some important metrics are shown below, these plots were created during the EDA process so there they were built for functionality over beauty. The correlation heatmap and the feature selection importance bar chart was helpful for 
+					us for feature selection of our model. These are just for explaining why we chose certain features over the other. 
+				</p>
+				<h4 style = "text-align: center">Room Types Distribution</h4>
+					<img alt="Correlation" src="static/figure/Room_types.png" class="datasetFigure" style = "max-width: 50%">
+				<h4 style = "text-align: center">Correlation Matrix</h4>
+					<img alt="Correlation" src="static/figure/Correlation_Matrix.png" class="datasetFigure" style = "max-width: 50%">
+				<h4 style = "text-align: center">Feature importance</h4>
+					<img alt="Feature importance" src="static/figure/Feature_Selection.png" class="datasetFigure" style = "max-width: 50%">
+				<h4 style = "text-align: center">Distribution of Rooms by Regions</h4>
+				<img alt="Feature importance" src="static/figure/Room_Type.png" class="datasetFigure" style = "max-width: 50%"> 
+			</details>
+      	</div>
+	</div>
+
+</div><br><br><br><br><br>
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<h3>
+			<b>Your Dream House Finder </b><br>
+		</h3>
+	</div>
+</div>
+<div id = "initial_loading">
+	<div class="sk-cube-grid">
+		<div class="sk-cube sk-cube1"></div>
+		<div class="sk-cube sk-cube2"></div>
+		<div class="sk-cube sk-cube3"></div>
+		<div class="sk-cube sk-cube4"></div>
+		<div class="sk-cube sk-cube5"></div>
+		<div class="sk-cube sk-cube6"></div>
+		<div class="sk-cube sk-cube7"></div>
+		<div class="sk-cube sk-cube8"></div>
+		<div class="sk-cube sk-cube9"></div>
+	  </div><p style = "font-size: 27px">Generating Analysis....... </p> 
+</div>
+<iframe src = "/actual_app" width="100%" height="2700" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" onload = "afterload();"></iframe>
+<script type = "text/javascript">
+	function afterload(){
+		$("#initial_loading").hide();     
+		
+	}
+</script>
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

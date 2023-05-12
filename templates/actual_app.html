@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Your Dream Houses</title>
+
+	<meta name="description" content="Source code generated using layoutit.com">
+	<meta name="author" content="LayoutIt!">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<script type="text/javascript" src={{cdn_js}} crossorigin="anonymous"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
+
+</head>
+
+<body>
+	<script>
+		window.onload = function jump(){
+			var top = document.getElementById('{{anchor}}').offsetTop; //Getting Y of target element
+			window.scrollTo(0, top);                        //Go there.
+			$("#loading").hide();
+		}
+
+	</script>
+
+	<div class="container-fluid" id="finder">
+		<div class="row">
+			<div class="col-md-3">
+				<form role="form" method="post"><br><br><br>
+					<div class="checkbox">
+						<b> <label style = "font-size: 17px">Select the Room Type (Required): </label></b><br>
+							
+						{% for roomType in roomTypeSet %}
+						<label style = "font-size: 17px">{{ roomType }}</label> <input style = "height: 20px; width: 20px;" type="checkbox" name="roomType" value="{{ roomType }}"> <br>
+						{% endfor %}
+
+						
+					</div>
+
+					<div class="checkbox" id="neighbourhoodGroup">
+						<b><label style = "font-size: 17px">Select the Desired Region(s) (Required): </label></b><br>  
+
+						{% for neighbourhoodGroup in neighbourhoodGroupSet %}
+						<label style = "font-size: 17px">{{ neighbourhoodGroup }}</label> <input style = "height: 20px; width: 20px;" type="checkbox" name="neighbourhoodGroup" value="{{ neighbourhoodGroup }}"
+							onclick="onClickHander(this)"><br>
+						{% endfor %}
+					</div>
+
+					<div class="dropdown">
+						<script>
+							var ngSelectedSet = new Set();
+							var ngMap = JSON.parse('{{ng_dict|tojson}}');
+
+							function onClickHander(obj) {
+								if (obj.checked) {
+									ngSelectedSet.add(obj.value);
+									changeDropdown('add', obj.value);
+								} else {
+									ngSelectedSet.delete(obj.value);
+									changeDropdown('remove', obj.value);
+								}
+							}
+						</script>
+
+						<label style = "font-size: 17px"><b>Select the Desired Neighbourhood (Required): </b></label><br>
+						<select id="neighbourhoodSelect" name="neighbourhood"> 
+							<option value="none" selected disabled hidden> Select One </option>
+						</select> <br>
+
+						<script>
+							function changeDropdown(op, ng_group) {
+								var select = document.getElementById("neighbourhoodSelect");
+								for (var ng of ngMap[ng_group]) {
+									if (op == 'add') {
+										var option = document.createElement("option");
+										option.text = ng;
+										option.name = ng;
+										option.value = ng;
+										select.add(option);
+									} else {
+										select.removeChild(select.querySelector('option[value="' + ng + '"]'))
+									}
+								}
+							}
+						</script>
+					</div>
+					<div class="form-group">
+						<label style = "font-size: 17px" for="minPrice"><br><b>Minimum Price: </b></label> <input style = "width: 200px" id="minPrice" type="number" name="minPrice",
+						 value="{{request_form['minPrice']}}"> <br>
+
+						<label style = "font-size: 17px" for="maxPrice">
+							<br><b>Maximum Price:  </b>  
+						</label> <input style = "width: 200px" id="maxPrice" type="number" name="maxPrice",
+						 value="{{request_form['maxPrice']}}"> <br> 
+
+						<label style = "font-size: 17px" for="minNight">
+							<br><b>Minimum Nights:  </b>
+						</label> <input style = "width: 200px" id="minNight" type="number" name="minNight", 
+						 value="{{request_form['minNight']}}"> <br> 
+
+					</div>
+					<button type="submit" class="btn btn-primary" style = "width: 127px" onclick = "loading();">
+						Search
+					</button>
+				</form>
+			</div>
+			
+			<div class="col-md-9">
+				<div class="tabbable" id="tabs-290381">
+					<ul class="nav nav-tabs">
+						<li class="nav-item">
+							<a class="nav-link active" href="#tab1" data-toggle="tab">Searching/Prediction Result</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#tab2" data-toggle="tab">Map of Houses</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#tab3" data-toggle="tab">Data Visualization</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab1">
+							<p>
+								{% if msg_pred %}
+									<div align="left"><b><p style = "font-size: 25px; color: #477685; margin-bottom: 1em;">{{msg_pred}}</p></b></div>
+								{% endif %}
+
+								{% for table in tables %}
+								{{ table|safe }}
+								{% endfor %}
+							</p>
+						</div>
+						<div class="tab-pane" id="tab2">
+							<p>
+								<div align="left"><b><p style = "font-size: 20px; color: #477685; margin-bottom: 1em;">{{map_title}}</p></b></div>
+								{{script1 | safe}}
+								{{div1 | safe}}
+							</p>
+						</div>
+
+
+
+						<div class="tab-pane" id="tab3"> <br> 
+							<div align="left"><b><p style = "font-size: 20px; color: #477685; margin-bottom: 1em;">{{cs_title}}</p></b></div>
+							{{script1_count | safe}}
+							{{div1_count | safe}}
+							<br>
+							<div align="left"><b><p style = "font-size: 20px; color: #477685; margin-bottom: 1em;">{{pr_title}}</p></b></div>
+							{{script1_price | safe}}
+							{{div1_price | safe}}
+							<br>
+
+							<div align="left"><b><p style = "font-size: 20px; color: #477685; margin-bottom: 1em;">{{donut_title}}</p></b></div>
+							<br>
+							<img src="{{ img }}" align="left"> <!--class="vis-image"-->
+							<br>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id = "loading">
+		<div class="sk-cube-grid">
+			<div class="sk-cube sk-cube1"></div>
+			<div class="sk-cube sk-cube2"></div>
+			<div class="sk-cube sk-cube3"></div>
+			<div class="sk-cube sk-cube4"></div>
+			<div class="sk-cube sk-cube5"></div>
+			<div class="sk-cube sk-cube6"></div>
+			<div class="sk-cube sk-cube7"></div>
+			<div class="sk-cube sk-cube8"></div>
+			<div class="sk-cube sk-cube9"></div>
+		  </div><p style = "font-size: 27px">Generating Analysis....... </p> 
+
+
+	</div>
+	<script type = "text/javascript">
+        function loading(){
+            $("#loading").show();
+            $("#finder").hide();   
+        }
+
+	</script>
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+
+
+body {
+  color: #40514E;
+  margin: 0;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  background-color: #F9F3EE; 
+}
+
+h1 {
+  font-size: 5.625rem;
+  font-weight: bold;
+  font-family: 'Sacramento', cursive;
+  padding-bottom: 20px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  padding-bottom: 10px;
+}
+h3 {
+  color: #66aabf;
+  
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 50px; font-weight: bolder;  
+}
+
+h4 {
+   font-weight: bold; 
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 50px;
+}
+
+p {
+  line-height: 2; 
+}
+
+hr {
+  border-color: #66BFBF;
+  border: dotted #EAF6F6 6px;
+  border-bottom: none;
+  width: 4%;
+  margin: 100px auto;
+}
+
+a{
+  color: #11999E;
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px 20px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7b1de6;
+}
+
+.title-text{
+  margin-top: 150px;
+  color:white!important;
+}
+
+.top-container {
+  height: 100vh;
+  background-image:url("../figure/NYcity.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.middle-container {
+  background-color:#F9F3EE;
+  margin: 0 auto 0 auto;
+  /*text-align: left;*/
+}
+
+.vis-container{
+  /*background-color:#F9F3EE;*/
+}
+
+.vis-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.background{
+  width: 70%;
+  margin: 100px auto 100px auto;
+  text-align: left;
+}
+
+.Question-to-investigate {
+  width: 70%;
+  margin: 0 auto 0 auto;
+  text-align: left;
+}
+
+.User-Story {
+  width: 70%;
+  margin: 0 auto 0 auto;
+  text-align: left;
+}
+
+.intro {
+  width: 70%;
+  margin-top: 50px;
+}
+
+.userstory_body {
+  width: 70%;
+  margin-top: 30px;
+}
+
+.datasetFigure{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top: 30px;
+}
+
+.btn{
+   background-color:#66BFBF;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red; /*?????????? */
+  opacity: 90; /* Firefox */
+  padding: 2px;
+  font-style: italic;
+  font-size: 1em;
+  text-align: center;
+}
+
+select{
+  line-height: 1;
+  border: 1px solid darkgray;
+  padding: 5px;
+  border-radius: 1;
+  width: 350px;
+  height: 30px;
+  position: relative;
+  font-size: 1em;
+  color:#40514E;
+}
+
+div#loading {
+  display: none;
+  height: 2000px;
+  background: no-repeat; 
+}
+div#initial_loading {
+  height: 2000px;
+  background: no-repeat; 
+}
+.sk-cube-grid {
+  width: 170px;
+  height: 170px;
+  margin: 200px auto 127px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #67aabf;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
+}
